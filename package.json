@@ -1,0 +1,26 @@
+{
+    "name": "ubg",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "commonjs",
+    "author": "xcfio",
+    "license": "MIT",
+    "scripts": {
+        "dev": "netlify dev",
+        "test": "tsc --watch --noEmit"
+    },
+    "dependencies": {
+        "@netlify/functions": "^2.8.1",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "jsonwebtoken": "^9.0.2",
+        "postgres": "^3.4.4",
+        "serverless-http": "^3.2.0"
+    },
+    "devDependencies": {
+        "@types/cookie-parser": "^1.4.7",
+        "@types/express": "^4.17.21",
+        "@types/node": "^22.0.0"
+    }
+}
