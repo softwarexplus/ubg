@@ -1,9 +1,12 @@
-import { NextFunction, Request, Response, Router } from "express"
-import cookie from "cookie-parser"
+import Router from "fastify"
+import JWT from "@fastify/jwt"
+import Cookie from "@fastify/cookie"
 
-const router = Router()
+const fastify = Router()
 
-router.use(cookie(process.env.COOKIE_SECRET))
-router.get("/", (_req, res) => res.send("Hello World"))
+fastify.register(JWT, { secret: process.env.JWT_SECRET })
+fastify.register(Cookie, { secret: process.env.COOKIE_SECRET })
 
-export default () => router
+fastify.get("/", () => process.env)
+
+export default fastify

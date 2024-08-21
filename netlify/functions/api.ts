@@ -1,8 +1,6 @@
-import { config } from "dotenv"
-import express from "express"
-import router from "../../src/index"
 import serverless from "serverless-http"
-config()
+import fastify from "../../src/index"
+import { config } from "dotenv"
 
-export const app = express().use(router)
-export const handler = serverless(app)
+config()
+export const handler = serverless(fastify as any)
